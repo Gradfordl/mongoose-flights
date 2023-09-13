@@ -11,7 +11,7 @@ class Index extends React.Component {
         <ul>
           {flights.map((flight) => {
             return (
-              <li key={flight._id}>{`${flight.airline} ${flight.flightNo} ${flight.departs}`}</li>
+              <li key={flight._id}>{`${flight.airline} ${flight.flightNo} ${flight.departs.toLocaleString()}`}</li>
             );
           })}
         </ul>
