@@ -1,6 +1,5 @@
 const React = require("react");
 
-
 class Index extends React.Component {
   render() {
     const { flights } = this.props;
@@ -11,7 +10,13 @@ class Index extends React.Component {
         <ul>
           {flights.map((flight) => {
             return (
-              <li key={flight._id}>{`${flight.airline} ${flight.flightNo} ${flight.departs.toLocaleString()}`}</li>
+              <li key={flight._id}>
+                {`${flight.airline} ${flight.flightNo} ${flight.departs.toLocaleString()}`}
+                <nav>
+                  <a href={`/flights/${flight._id}`}>Flight Detail</a>
+                  <br />
+                </nav>
+              </li>
             );
           })}
         </ul>
